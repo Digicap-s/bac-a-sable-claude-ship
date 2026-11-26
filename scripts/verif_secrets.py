@@ -49,7 +49,7 @@ for f in fichiers:
                 alertes.append((f, n, libelle))
 
 if HISTORIQUE:
-    journal = subprocess.run(["git", "-C", racine, "log", "-p", "--all", "--no-color"], capture_output=True, text=True, errors="ignore").stdout
+    journal = subprocess.run(["git", "-C", racine, "log", "-p", "--no-color"], capture_output=True, text=True, errors="ignore").stdout
     commit = "?"
     for ligne in journal.splitlines():
         if ligne.startswith("commit "):
